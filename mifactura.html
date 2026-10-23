@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi factura</title>
+    <link rel="icon" href="img/energia.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+
+<body class="container py-3">
+
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+        <h1>
+            Mi factura
+        </h1>
+        <p>
+            Factura de Celsia de septiembre de 2026 (NIU 9073520000, estrato 2).
+        </p>
+      <nav>
+            <a  class="btn btn-outline-light" href="index.html">Inicio</a>
+            <a class="btn btn-outline-light" href="equipos.html">Equipos de mi casa</a>
+            <a class="btn btn-outline-light" href="mifactura.html">Mi factura</a>
+            <a class="btn btn-outline-light" href="encuesta.html">Encuesta</a>
+            <a class="btn btn-outline-light" href="registro.html">Registro</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Mi factura de septiembre</h2>
+            <p>
+                Factura del periodo facturado del <strong>23 de agosto al 22 de septiembre de 2026</strong>
+                (31 días). El total a pagar fue de <strong>$90.455 COP</strong>.
+            </p>
+            <figure class="figure">
+                <img src="img/factura.jpeg" class="figure-img img-fluid rounded border"
+                     style="max-width: 700px;" alt="Foto de la factura de energía de Celsia del mes de septiembre de 2026">
+                <figcaption class="figure-caption">
+                    Factura de Celsia de septiembre de 2026.
+                </figcaption>
+            </figure>
+            <p>
+                Datos importantes de la factura:
+            </p>
+            <ul>
+                <li>Consumo del mes: <strong>64 kWh</strong> (medidor 2217142072: 6.510 − 6.446 = 64 kWh).</li>
+                <li>Total energía: <strong>$35.883</strong> · Total aseo: <strong>$40.636</strong> · Alumbrado público: <strong>$13.936</strong>.</li>
+                <li>Valor unitario de la energía: <strong>983,82 COP/kWh</strong>.</li>
+                <li>Subsidio: <strong>43,07%</strong> (27.117 COP descontados, estrato 2).</li>
+                <li>Pago oportuno hasta: <strong>2 de octubre de 2026</strong>.</li>
+            </ul>
+        </section>
+
+        <!-- Requisito 1: tabla con el historial de consumo de la factura -->
+        <section>
+            <h2>Historial de consumo de la factura</h2>
+            <!-- table: la tabla con el historial que trae la factura (mes, kWh y valor) -->
+            <table class="table table-striped table-bordered">
+                <caption>
+                    Historial de consumo que trae la factura (mes, kWh y valor).
+                    La factura solo informa los kWh de cada mes, por lo que el valor se
+                    estimó con el valor unitario de la factura: 983,82 COP/kWh.
+                </caption>
+                <!-- thead: la fila de ENCABEZADOS -->
+                <thead>
+                    <!-- tr: una FILA (table row) -->
+                    <tr>
+                        <!-- th: celda de ENCABEZADO (sale en negrita y centrada) -->
+                        <th>Mes</th>
+                        <th>kWh</th>
+                        <th>Valor estimado (COP)</th>
+                    </tr>
+                </thead>
+                <!-- tbody: el CUERPO de la tabla, con los datos -->
+                <tbody>
+                    <!-- td: celda de DATOS -->
+                    <tr>
+                        <td>Marzo</td>
+                        <td>61</td>
+                        <td>60.013</td>
+                    </tr>
+                    <tr>
+                        <td>Abril</td>
+                        <td>64</td>
+                        <td>62.964</td>
+                    </tr>
+                    <tr>
+                        <td>Mayo</td>
+                        <td>59</td>
+                        <td>58.045</td>
+                    </tr>
+                    <tr>
+                        <td>Junio</td>
+                        <td>61</td>
+                        <td>60.013</td>
+                    </tr>
+                    <tr>
+                        <td>Julio</td>
+                        <td>60</td>
+                        <td>59.029</td>
+                    </tr>
+                    <tr>
+                        <td>Agosto</td>
+                        <td>65</td>
+                        <td>63.948</td>
+                    </tr>
+                    <tr>
+                        <td>Septiembre (actual)</td>
+                        <td>64</td>
+                        <td>62.964</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Promedio de los 6 meses</th>
+                        <td>62</td>
+                        <td>60.997</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p>
+                El consumo real de la casa es muy estable: siempre está entre 59 y 65 kWh
+                al mes. En septiembre el total pagado fue de <strong>$90.455</strong>, valor
+                que incluye además de la energía el servicio de aseo ($40.636) y el
+                alumbrado público ($13.936). En agosto se habían pagado $92.113.
+            </p>
+        </section>
+
+
+        <section>
+            <h2>Comparación: proyección de equipos.html vs. factura</h2>
+            <table class="table table-bordered">
+                <caption>
+                    Comparación entre el consumo proyectado por los equipos de la casa y el consumo real de la factura.
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Dato</th>
+                        <th>kWh al mes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Proyección de <a href="equipos.html">equipos</a> (75,00 kWh por semana)</td>
+                        <td>325</td>
+                    </tr>
+                    <tr>
+                        <td>Consumo real de la factura (septiembre)</td>
+                        <td>64</td>
+                    </tr>
+                    <tr>
+                        <th>Diferencia</th>
+                        <td>261 kWh de más en la proyección</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                La proyección de <a href="equipos.html">equipos</a> da 325 kWh al mes
+                (75,00 kWh por semana × 52 semanas ÷ 12 meses), es decir, <strong>casi 5 veces</strong>
+                más que los 64 kWh que trae la factura. La diferencia se explica sobre todo
+                por la <strong>estufa / horno Haceb</strong>: en la tabla se asumió que funciona
+                a su potencia máxima de 4.250 W durante 2,11 horas todos los días, y eso solo
+                produce 62,77 kWh por semana (más del 80% de la proyección). Sin embargo,
+                el termostato de la estufa <strong>enciende y apaga</strong> el resistente, así que
+                no consume la potencia máxima de forma continua, y además no se usa todos los
+                días. Por eso la proyección quedó muy por encima del consumo real medido por
+                el medidor (6.510 − 6.446 = 64 kWh en 31 días), que además coincide con el
+                promedio de los últimos 6 meses de 62 kWh.
+            </p>
+        </section>
+
+        <section>
+            <h2>Recomendaciones de ahorro</h2>
+            <!-- ol: lista NUMERADA -->
+            <ol>
+                <li>
+                    <strong>
+                        Usar la estufa de forma más eficiente.
+                    </strong> Según la tabla de
+                    equipos, la estufa / horno representa más del 80% del consumo estimado
+                    (62,77 kWh de 75,00 por semana). Cocinar con olla a presión, tapar los
+                    ollas y no precalentar el horno reduce las horas de uso y el gasto.
+                </li>
+                <li>
+                    <strong>
+                        Cuidar la nevera.
+                    </strong> 
+                    Es el segundo equipo que más consume
+                    porque está encendida 24 horas (9,80 kWh por semana). No debe entrar
+                    comida caliente, hay que revisar que las gomas cierren bien y conviene
+                    mantenerla entre 3 °C y 5 °C.
+                </li>
+                <li>
+                    <strong>
+                        Desconectar la impresora cuando no se use.
+                    </strong> 
+                    Aunque solo
+                    consume 12 W, la impresora Epson está en modo de espera gran parte del
+                    día; desconectarla del enchufe evita ese gasto fantasma todos los días.
+                </li>
+                <li>
+                    <strong>
+                        Vigilar la factura mensualmente.
+                    </strong> 
+                    El promedio de los
+                    últimos 6 meses es de 62 kWh. Si un mes se pasa de ese valor conviene
+                    revisar qué equipo aumentó el consumo. Como el estrato 2 recibe un
+                    subsidio del 43,07% ($27.117 en septiembre), mantener un consumo bajo
+                    ayuda a seguir dentro del rango subsidiado y a pagar menos.
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <footer class="mt-4 text-muted">
+        <p>Fuente: factura de Celsia de septiembre de 2026 (NIU 9073520000).</p>
+        <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta</title>
+    <link rel="icon" href="img/energia.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+
+<body class="container py-3">
+
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+        <h1>
+            Encuesta de hábitos de consumo
+        </h1>
+        <p>
+            Cuéntenos cómo usa la energía en su familia. Su respuesta es anónima.
+        </p>
+        <nav>
+            <a  class="btn btn-outline-light" href="index.html">Inicio</a>
+            <a class="btn btn-outline-light" href="equipos.html">Equipos de mi casa</a>
+            <a class="btn btn-outline-light" href="mifactura.html">Mi factura</a>
+            <a class="btn btn-outline-light" href="encuesta.html">Encuesta</a>
+            <a class="btn btn-outline-light" href="registro.html">Registro</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Formulario de la encuesta</h2>
+            <p>
+                Responda los siguientes 10 preguntas sobre los hábitos de consumo de
+                energía de su hogar. Los campos con <strong>*</strong> son obligatorios.
+            </p>
+
+            <!-- method="get": los datos se envían en la URL -->
+            <form action="#" method="get">
+
+                <!-- fieldset: AGRUPA los campos; legend: el TITULO del grupo -->
+                <fieldset class="border rounded p-3 mb-4">
+                    <legend class="fs-5 fw-bold px-2"> 
+                        Datos de contacto 
+                    </legend>
+
+                    <!-- label: la ETIQUETA del campo; for = id del campo -->
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre y apellido *</label>
+                        <!-- text: campo de TEXTO corto -->
+                        <input type="text" id="nombre" name="nombre" class="form-control"
+                               placeholder="Mario Perez" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo electrónico *</label>
+                        <!-- email: valida que sea un correo (@ y .) -->
+                        <input type="email" id="email" name="email" class="form-control"
+                               placeholder="mario@gmail.com" required>
+                    </div>
+                </fieldset>
+
+                <fieldset class="border rounded p-3 mb-4">
+                    <legend class="fs-5 fw-bold px-2"> 
+                        Datos del hogar 
+                    </legend>
+
+                    <div class="mb-3">
+                        <label for="personas" class="form-label">
+                            ¿Cuántas personas viven en su casa? *
+                        </label>
+                        <!-- number: campo NUMERICO con min y max -->
+                        <input type="number" id="personas" name="personas" class="form-control"
+                               min="0" max="15" step="1" placeholder="4" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="estrato" class="form-label">
+                            Estrato de la vivienda *
+                        </label>
+                        <!-- select: lista DESPLEGABLE; option es cada opcion -->
+                        <select id="estrato" name="estrato" class="form-select" required>
+                            <option value="" selected disabled>
+                                Seleccione --
+                            </option>
+                            <option value="1">Estrato 1</option>
+                            <option value="2">Estrato 2</option>
+                            <option value="3">Estrato 3</option>
+                            <option value="4">Estrato 4</option>
+                            <option value="5">Estrato 5</option>
+                            <option value="6">Estrato 6</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="form-label d-block">¿Con qué cocina? *</span>
+                        <!-- radio: opciones que se EXCLUYEN entre si (mismo name) -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="cocina" id="cocina_electrica"
+                                   value="electric" required>
+                            <label class="form-check-label" for="cocina_electrica">
+                                Eléctrica (placa o inducción)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="cocina" id="cocina_gas"
+                                   value="gas">
+                            <label class="form-check-label" for="cocina_gas">
+                                A gas
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="cocina" id="cocina_mixta"
+                                   value="mixta">
+                            <label class="form-check-label" for="cocina_mixta">
+                                Mixta (gas y eléctrica)
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="border rounded p-3 mb-4">
+                    <legend class="fs-5 fw-bold px-2"> 
+                        Hábitos de consumo 
+                    </legend>
+
+                    <div class="mb-3">
+                        <label for="televisor" class="form-label">
+                            ¿Cuántas horas al día deja prendido el televisor? (0 a 24)
+                        </label>
+                        
+                        <input type="range" id="televisor" name="televisor" class="form-range" min="0" max="24" step="1">
+                        
+                        <!-- Escala numérica alineada automáticamente con clases de Bootstrap -->
+                        <div class="d-flex justify-content-between small text-muted">
+                            <span>0</span><span>1</span>
+                            <span>2</span><span>3</span>
+                            <span>4</span><span>5</span>
+                            <span>6</span><span>7</span>
+                            <span>8</span><span>9</span>
+                            <span>10</span><span>11</span>
+                            <span>12</span><span>13</span>
+                            <span>14</span><span>15</span>
+                            <span>16</span><span>17</span>
+                            <span>18</span><span>19</span>
+                            <span>20</span><span>21</span>
+                            <span>22</span><span>23</span>
+                            <span>24</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="duchas" class="form-label">
+                            ¿Cuántas duchas eléctricas recargadas por semana? (0 a 35)
+                        </label>
+                        <!-- number: campo NUMERICO con min y max -->
+                        <input type="number" id="duchas" name="duchas" class="form-control"
+                               min="0" max="35" step="1" placeholder="21">
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="form-label d-block">
+                            ¿Cuáles de estas acciones realiza en su casa?
+                        </span>
+                        <!-- checkbox: opciones que se SUMAN entre si (cada una tiene su name) -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="desconectar"
+                                   name="accion_desconectar">
+                            <label class="form-check-label" for="desconectar">
+                                Desconecto los aparatos del enchufe cuando no se usan
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="luz_dia"
+                                   name="accion_luz_dia" value="si">
+                            <label class="form-check-label" for="luz_dia">
+                                Apago las luces durante el día y uso luz natural
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="nevera_caliente"
+                                   name="accion_nevera" value="si">
+                            <label class="form-check-label" for="nevera_caliente">
+                                Dejo enfriar la comida antes de meterla a la nevera
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="plancha_tanda"
+                                   name="accion_plancha" value="si">
+                            <label class="form-check-label" for="plancha_tanda">
+                                Plancho toda la ropa en una sola tanda
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="border rounded p-3 mb-4">
+                    <legend class="fs-5 fw-bold px-2">
+                        Sugerencias y comentarios
+                    </legend>
+
+                    <div class="mb-3">
+                        <label for="sugerencias" class="form-label">
+                            ¿Qué cambios le gustaría hacer en su casa para gastar menos energía? *
+                        </label>
+                        <!-- textarea: campo de TEXTO largo (varias lineas) -->
+                        <textarea id="sugerencias" name="sugerencias" class="form-control" rows="4"
+                                  placeholder="Escriba aquí sus sugerencias..." required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="recibo" class="form-label">
+                            ¿Cuánto pagó aproximadamente su última factura? (COP)
+                        </label>
+                        <input type="number" id="recibo" name="recibo" class="form-control"
+                               min="0" max="500000" step="1000" placeholder="90455" required>
+                    </div>
+                </fieldset>
+
+                <!-- submit: el boton que ENVIA el formulario -->
+                    <button 
+                        type="submit" class="btn btn-primary">
+                        Enviar respuestas
+                    </button>
+                    <button 
+                        type="reset" class="btn btn-outline-secondary">
+                        Borrar respuestas
+                    </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="mt-4 text-muted">
+        <p>Encuesta de hábitos de consumo de energía</p>
+        <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+</body>
+</html>
